@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mentor — онлайн-обучение и консультации</title>
+  <meta name="description" content="Mentor — обучающие материалы и личное сопровождение. Цифровые услуги онлайн. Оплата по ссылке (эквайер Тинькофф): МИР, T-Pay, SberPay. Поддержка: mentorpro33@gmail.com, +7 918 493-04-07" />
+
+  <!-- Без сторонних скриптов/трекеров/виджетов/рекламы -->
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --card:#101828;
+      --text:#e6eaf2;
+      --muted:#a8b0c2;
+      --border:rgba(255,255,255,.08);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --glass: rgba(16,24,40,.62);
+      --glass2: rgba(255,255,255,.03);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue";
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(110,231,255,.14), transparent 55%),
+        radial-gradient(900px 500px at 80% 20%, rgba(167,139,250,.16), transparent 55%),
+        linear-gradient(180deg, #070a12, #0b0f19);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{ width:min(1040px, 92vw); margin:0 auto; padding: 22px 0 70px; }
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding: 8px 0 16px;
+    }
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .brandLogo{
+      width:40px;height:40px;border-radius:12px;
+      display:block; object-fit:cover;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 25px rgba(0,0,0,.22);
+      background: rgba(255,255,255,.03);
+      flex:0 0 auto;
+    }
+    .brand b{font-size:18px; letter-spacing:.2px}
+    .small{ font-size: 13px; color: var(--muted); }
+    .pill{
+      padding:8px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      background: var(--glass2);
+      white-space:nowrap;
+    }
+    .pill a{ text-decoration: underline; text-underline-offset: 3px; }
+
+    nav{
+      margin: 8px 0 18px;
+      border:1px solid var(--border);
+      border-radius: 999px;
+      background: var(--glass2);
+      padding: 10px 12px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    nav a{
+      padding: 6px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 13px;
+      background: rgba(255,255,255,.02);
+    }
+    nav a:hover{ filter: brightness(1.08); color: var(--text); }
+
+    .hero{
+      border:1px solid var(--border);
+      border-radius: calc(var(--radius) + 10px);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      padding: 28px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(600px 240px at 20% 0%, rgba(110,231,255,.16), transparent 55%),
+        radial-gradient(600px 240px at 85% 10%, rgba(167,139,250,.18), transparent 55%);
+      pointer-events:none;
+      filter: blur(10px);
+      opacity:.9;
+    }
+    .hero > *{position:relative}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:start;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: 38px;
+      line-height:1.05;
+      letter-spacing:-.7px;
+    }
+    .subtitle{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:16px;
+      max-width: 70ch;
+    }
+
+    .ctaBox{
+      margin-top: 14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      border-radius: 16px;
+      padding: 14px 14px;
+    }
+    .ctaRow{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+    }
+    .ctaLabel{font-weight:800}
+    .ctaHint{color:var(--muted); font-size:13px; margin-top: 8px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, rgba(110,231,255,.22), rgba(167,139,250,.22));
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      font-weight: 800;
+      cursor:pointer;
+      transition: transform .15s ease, filter .15s ease;
+      color: var(--text);
+    }
+    .btn:hover{transform: translateY(-1px); filter: brightness(1.06)}
+    .btnGhost{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .cards{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--glass);
+      padding: 18px;
+    }
+    .price{
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -.4px;
+      margin: 0 0 6px;
+    }
+    .muted{ color: var(--muted); }
+    .tagRow{
+      display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px;
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .payBadge{
+      display:flex; align-items:center; gap:8px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .payLogo{ height: 18px; width:auto; display:block; }
+
+    .divider{
+      height:1px; background: rgba(255,255,255,.08);
+      margin: 14px 0;
+    }
+
+    .sectionGrid{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    .h2{
+      margin:0 0 10px;
+      font-size: 16px;
+      letter-spacing:.2px;
+      font-weight:900;
+    }
+    ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+    li{ margin:6px 0; }
+
+    details{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+      padding: 14px 16px;
+    }
+    details + details{ margin-top: 10px; }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-weight:900;
+      color: var(--text);
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .arrow{
+      width: 10px; height: 10px;
+      border-right: 2px solid rgba(255,255,255,.7);
+      border-bottom: 2px solid rgba(255,255,255,.7);
+      transform: rotate(45deg);
+      transition: transform .15s ease;
+      flex:0 0 auto;
+      margin-left: 8px;
+      opacity: .8;
+    }
+    details[open] .arrow{ transform: rotate(225deg); }
+    .detailsBody{
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      display:grid;
+      gap:10px;
+    }
+    .detailsBody b{ color: var(--text); }
+
+    footer{
+      margin-top: 16px;
+      padding: 18px;
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .sectionGrid{grid-template-columns:1fr}
+      h1{font-size: 32px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img class="brandLogo"
+             src="https://i.postimg.cc/rsmQpfkB/Chat-GPT-Image-26-noab-2025-g-03-07-06.png"
+             alt="Mentor"/>
+        <div>
+          <b>Mentor</b>
+          <div class="small">Онлайн-обучение и консультации</div>
+        </div>
+      </div>
+      <div class="pill">
+        Срок предоставления: до 24 часов • Тел: <a href="tel:+79184930407">+7 918 493-04-07</a>
+      </div>
+    </header>
+
+    <nav aria-label="Навигация">
+      <a href="#offer">Описание</a>
+      <a href="#payment">Оплата</a>
+      <a href="#how">Как получить</a>
+      <a href="#docs">Документы и условия</a>
+      <a href="#support">Поддержка</a>
+    </nav>
+
+    <main class="hero" id="offer">
+      <div class="grid">
+        <div>
+          <h1>Обучающие материалы и личное сопровождение</h1>
+          <p class="subtitle">
+            Цифровые услуги онлайн: материалы в электронном виде (видео/текст) и/или персональное сопровождение.
+            Всё предоставляется дистанционно через интернет.
+          </p>
+
+          <div class="ctaBox" id="support">
+            <div class="ctaRow">
+              <div class="ctaLabel">Оплата — по ссылке.</div>
+              <button class="btn" id="copyEmailBtn" type="button">Скопировать почту</button>
+              <a class="btnGhost" href="#payment">Способы оплаты</a>
+            </div>
+            <div class="ctaHint">
+              Напишите на почту <b id="emailText">mentorpro33@gmail.com</b> или позвоните:
+              <b><a href="tel:+79184930407">+7 918 493-04-07</a></b> — в ответ придёт платёжная ссылка Тинькофф + подтверждение.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="sectionGrid" id="how">
+            <div class="card">
+              <div class="h2">Как оплатить</div>
+              <ul>
+                <li>Пишите на почту: <b>mentorpro33@gmail.com</b> или звоните: <b>+7 918 493-04-07</b></li>
+                <li>Получаете платёжную ссылку (эквайер: Тинькофф)</li>
+                <li>Оплачиваете и получаете подтверждение</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="h2">Как получить услугу</div>
+              <ul>
+                <li>Срок предоставления: <b>до 24 часов</b> после оплаты</li>
+                <li>Материалы/инструкции приходят на e-mail</li>
+                <li>Физическая доставка не осуществляется</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="cards">
+            <div class="card">
+              <div class="h2">Обучающие материалы</div>
+              <div class="price">5 000 ₽</div>
+              <div class="muted">Цифровые материалы (видео/текст) в электронном виде.</div>
+              <div class="tagRow">
+                <div class="chip">Онлайн</div>
+                <div class="chip">До 24 часов</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="h2">Личное сопровождение</div>
+              <div class="price">50 000 ₽</div>
+              <div class="muted">Индивидуальная работа и сопровождение в согласованном формате.</div>
+              <div class="tagRow">
+                <div class="chip">Онлайн</div>
+                <div class="chip">Персонально</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="payment" style="margin-top:14px;">
+            <div class="h2">Оплата</div>
+            <div class="muted">
+              Эквайер: <b style="color:var(--text)">Тинькофф</b>.
+              Оплата выполняется <b style="color:var(--text)">по ссылке</b>, которая отправляется клиенту в ответ на обращение.
+            </div>
+
+            <div class="tagRow" style="margin-top:12px;">
+              <div class="payBadge" title="МИР">
+                <img class="payLogo" src="https://i.postimg.cc/28yKjSkM/Mir-logo-SVG-svg.png" alt="МИР"/>
+                МИР
+              </div>
+              <div class="payBadge" title="T-Pay">
+                <img class="payLogo" src="https://i.postimg.cc/SRNtMyWZ/t-bank-logo-2025.png" alt="T-Pay"/>
+                T-Pay
+              </div>
+              <div class="payBadge" title="SberPay">
+                <img class="payLogo" src="https://i.postimg.cc/wM0Zft6G/Sber-Accounting-Logo.png" alt="SberPay"/>
+                SberPay
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="muted" style="font-size:14px;">
+              <b style="color:var(--text)">Безопасность платежей:</b> платёжные данные вводятся только на защищённой странице банка/платёжного сервиса (HTTPS/TLS).
+              Продавец не получает и не хранит реквизиты карты и CVV/CVC.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="card" id="docs" style="margin-top:16px;">
+      <div class="h2">Документы и условия (для проверки эквайером)</div>
+      <div class="muted">Обязательная информация размещена ниже и раскрывается по необходимости.</div>
+
+      <div style="margin-top:12px;">
+        <details>
+          <summary>Ассортимент, страна происхождения, экспорт <span class="arrow"></span></summary>
+          <div class="detailsBody">
+            <div><b>Ассортимент (товары/услуги):</b></div>
+            <div><b>1) Обучающие материалы — 5 000 ₽.</b> Цифровые материалы в электронном виде (видео/текст).</div>
+            <div><b>2) Личное сопровождение — 50 000 ₽.</b> Индивидуальная работа и сопровождение в согласованном формате.</div>
+            <div><b>Страна происхождения услуг/материалов:</b> Россия.</div>
+            <div><b>Ограничения на экспорт:</b> не применяется (предоставление онлайн). Клиент обязан соблюдать требования законодательства своей страны.</div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Порядок предоставления (“доставка”) <span class="arrow"></span></summary>
+          <div class="detailsBody">
+            <div><b>Формат:</b> электронная услуга/цифровые материалы.</div>
+            <div><b>Срок предоставления:</b> до 24 часов после подтверждения оплаты и получения данных для связи.</div>
+            <div><b>Способ предоставления:</b> отправка материалов/инструкций/подтверждений на e-mail клиента.</div>
+            <div><b>Регионы/страны предоставления:</b> онлайн, при наличии доступа к интернету.</div>
+            <div><b>Физическая доставка:</b> не осуществляется.</div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Возврат и отмена <span class="arrow"></span></summary>
+          <div class="detailsBody">
+            <div><b>Отмена до начала оказания услуги:</b> возможна.</div>
+            <div><b>Условия возврата:</b> возврат производится при отмене до начала оказания услуги (до отправки материалов/до предоставления доступа/до начала сопровождения).</div>
+            <div><b>Как запросить отмену/возврат:</b> отправьте письмо на <a href="mailto:mentorpro33@gmail.com">mentorpro33@gmail.com</a> и укажите ФИО, дату оплаты и сумму.</div>
+            <div><b>Срок рассмотрения:</b> до 10 рабочих дней (и/или по регламенту банка-эквайера).</div>
+            <div><b>Способ возврата:</b> на тот же платёжный инструмент, с которого была произведена оплата.</div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Контактная информация службы поддержки <span class="arrow"></span></summary>
+          <div class="detailsBody">
+            <div><b>E-mail:</b> <a href="mailto:mentorpro33@gmail.com">mentorpro33@gmail.com</a></div>
+            <div><b>Телефон:</b> <a href="tel:+79184930407">+7 918 493-04-07</a></div>
+            <div><b>Время ответа:</b> обычно до 24 часов.</div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Информация об исполнителе <span class="arrow"></span></summary>
+          <div class="detailsBody">
+            <div><b>Исполнитель:</b> ИП Лаптев Михаил Сергеевич</div>
+            <div><b>ИНН:</b> 381403643936</div>
+            <div><b>ОГРНИП:</b> 325385000085180</div>
+            <div><b>Адрес местонахождения:</b> Россия, Иркутская область, г. Саянск, мкр. Олимпийский, д. 8</div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Информационная безопасность <span class="arrow"></span></summary>
+          <div class="detailsBody">
+            <div><b>Политика обработки данных:</b> данные клиентов используются только для связи и оказания услуги и не передаются третьим лицам, кроме случаев, предусмотренных законом.</div>
+            <div><b>Безопасная передача данных плательщиков:</b> оплата осуществляется на защищённой странице банка/платёжного сервиса; данные карты продавец не получает и не хранит.</div>
+            <div><b>Рекомендация клиенту:</b> не отправлять в переписке данные банковской карты, CVV/CVC и пароли.</div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Запрещённые виды деятельности <span class="arrow"></span></summary>
+          <div class="detailsBody">
+            <div>Исполнитель не реализует товары/услуги, запрещённые правилами эквайера и действующим законодательством.</div>
+            <div>
+              Перечень запрещённых товаров/услуг:
+              <a href="https://acdn.t-static.ru/static/documents/bc8d874b-99d0-43cc-b556-9d6b313110b8.pdf" target="_blank" rel="noopener noreferrer nofollow">
+                открыть документ (в новой вкладке)
+              </a>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <footer>
+      <div><b>Примечание:</b> сайт предназначен для информирования об услугах и приёма заявок через e-mail/телефон. Реклама, баннерные сети и сторонние всплывающие элементы не используются.</div>
+      <div class="muted" style="margin-top:8px;">© Mentor. Все права защищены.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Кнопка "Скопировать почту" — работает у всех
+    const btn = document.getElementById("copyEmailBtn");
+    const emailEl = document.getElementById("emailText");
+    if (btn && emailEl) {
+      const email = emailEl.innerText.trim();
+      btn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(email);
+          const old = btn.innerText;
+          btn.innerText = "Скопировано ✅";
+          setTimeout(() => btn.innerText = old, 1400);
+        } catch (e) {
+          prompt("Скопируй почту вручную:", email);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

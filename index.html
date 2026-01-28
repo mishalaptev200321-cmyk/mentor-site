@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mentor — онлайн-обучение и консультации</title>
-  <meta name="description" content="Mentor — обучающие материалы и личное сопровождение. Цифровые услуги онлайн. Оплата по ссылке (эквайер Тинькофф): МИР, T-Pay, SberPay. Поддержка: mentorpro33@gmail.com, +7 914 893-04-07" />
+  <meta name="description" content="Mentor — обучающие материалы и личное сопровождение. Цифровые услуги онлайн. Оплата по платёжной ссылке (Robokassa). Поддержка: mentorpro33@gmail.com, +7 914 893-04-07" />
 
   <!-- Без сторонних скриптов/трекеров/виджетов/рекламы -->
   <style>
@@ -184,16 +184,6 @@
       color: var(--muted);
       font-size: 13px;
     }
-    .payBadge{
-      display:flex; align-items:center; gap:8px;
-      border:1px solid rgba(255,255,255,.12);
-      border-radius: 999px;
-      padding: 8px 10px;
-      background: rgba(255,255,255,.02);
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .payLogo{ height: 18px; width:auto; display:block; }
 
     .divider{
       height:1px; background: rgba(255,255,255,.08);
@@ -214,54 +204,6 @@
     }
     ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
     li{ margin:6px 0; }
-
-    details{
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.02);
-      padding: 14px 16px;
-    }
-    details + details{ margin-top: 10px; }
-    summary{
-      cursor:pointer;
-      list-style:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      font-weight:900;
-      color: var(--text);
-    }
-    summary::-webkit-details-marker{ display:none; }
-    .arrow{
-      width: 10px; height: 10px;
-      border-right: 2px solid rgba(255,255,255,.7);
-      border-bottom: 2px solid rgba(255,255,255,.7);
-      transform: rotate(45deg);
-      transition: transform .15s ease;
-      flex:0 0 auto;
-      margin-left: 8px;
-      opacity: .8;
-    }
-    details[open] .arrow{ transform: rotate(225deg); }
-    .detailsBody{
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 14px;
-      display:grid;
-      gap:10px;
-    }
-    .detailsBody b{ color: var(--text); }
-
-    footer{
-      margin-top: 16px;
-      padding: 18px;
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.02);
-      color: var(--muted);
-      font-size: 13px;
-    }
 
     @media (max-width: 900px){
       .grid{grid-template-columns:1fr}
@@ -314,7 +256,7 @@
             </div>
             <div class="ctaHint">
               Напишите на почту <b id="emailText">mentorpro33@gmail.com</b> или позвоните:
-              <b><a href="tel:+79148930407">+7 914 893-04-07</a></b> — в ответ придёт платёжная ссылка Тинькофф + подтверждение.
+              <b><a href="tel:+79148930407">+7 914 893-04-07</a></b> — в ответ придёт платёжная ссылка <b>Robokassa</b> и подтверждение.
             </div>
           </div>
 
@@ -325,7 +267,7 @@
               <div class="h2">Как оплатить</div>
               <ul>
                 <li>Пишите на почту: <b>mentorpro33@gmail.com</b> или звоните: <b>+7 914 893-04-07</b></li>
-                <li>Получаете платёжную ссылку (эквайер: Тинькофф)</li>
+                <li>Получаете платёжную ссылку через платёжный сервис <b>Robokassa</b></li>
                 <li>Оплачиваете и получаете подтверждение</li>
               </ul>
             </div>
@@ -366,38 +308,28 @@
           <div class="card" id="payment" style="margin-top:14px;">
             <div class="h2">Оплата</div>
             <div class="muted">
-              Эквайер: <b style="color:var(--text)">Тинькофф</b>.
-              Оплата выполняется <b style="color:var(--text)">по ссылке</b>, которая отправляется клиенту в ответ на обращение.
-            </div>
-
-            <div class="tagRow" style="margin-top:12px;">
-              <div class="payBadge" title="МИР">
-                <img class="payLogo" src="https://i.postimg.cc/28yKjSkM/Mir-logo-SVG-svg.png" alt="МИР"/>
-                МИР
-              </div>
-              <div class="payBadge" title="T-Pay">
-                <img class="payLogo" src="https://i.postimg.cc/SRNtMyWZ/t-bank-logo-2025.png" alt="T-Pay"/>
-                T-Pay
-              </div>
-              <div class="payBadge" title="SberPay">
-                <img class="payLogo" src="https://i.postimg.cc/wM0Zft6G/Sber-Accounting-Logo.png" alt="SberPay"/>
-                SberPay
-              </div>
+              Оплата выполняется <b style="color:var(--text)">по платёжной ссылке</b>, которая отправляется клиенту в ответ на обращение.
+              Платёж обрабатывается через платёжный сервис <b style="color:var(--text)">Robokassa</b>.
             </div>
 
             <div class="divider"></div>
 
             <div class="muted" style="font-size:14px;">
-              <b style="color:var(--text)">Безопасность платежей:</b> платёжные данные вводятся только на защищённой странице банка/платёжного сервиса (HTTPS/TLS).
+              <b style="color:var(--text)">Безопасность платежей:</b> платёжные данные вводятся только на защищённой странице платёжного сервиса (HTTPS/TLS).
               Продавец не получает и не хранит реквизиты карты и CVV/CVC.
+            </div>
+
+            <div class="tagRow" style="margin-top:12px;">
+              <div class="chip">Банковские карты</div>
+              <div class="chip">Онлайн</div>
+              <div class="chip">По ссылке</div>
             </div>
           </div>
         </div>
       </div>
     </main>
-
     <div class="card" id="docs" style="margin-top:16px;">
-      <div class="h2">Документы и условия (для проверки эквайером)</div>
+      <div class="h2">Документы и условия (для проверки)</div>
       <div class="muted">Обязательная информация размещена ниже и раскрывается по необходимости.</div>
 
       <div style="margin-top:12px;">
@@ -429,12 +361,12 @@
             <div><b>Отмена до начала оказания услуги:</b> возможна.</div>
             <div><b>Условия возврата:</b> возврат производится при отмене до начала оказания услуги (до отправки материалов/до предоставления доступа/до начала сопровождения).</div>
             <div><b>Как запросить отмену/возврат:</b> отправьте письмо на <a href="mailto:mentorpro33@gmail.com">mentorpro33@gmail.com</a> и укажите ФИО, дату оплаты и сумму.</div>
-            <div><b>Срок рассмотрения:</b> до 10 рабочих дней (и/или по регламенту банка-эквайера).</div>
+            <div><b>Срок рассмотрения:</b> до 10 рабочих дней (и/или по регламенту платёжного сервиса).</div>
             <div><b>Способ возврата:</b> на тот же платёжный инструмент, с которого была произведена оплата.</div>
           </div>
         </details>
 
-        <!-- ✅ ДОБАВЛЕНО: Публичная оферта (часть 1/2) -->
+        <!-- ✅ Публичная оферта (часть 1/2) — обновлено под Robokassa -->
         <details>
           <summary>Публичная оферта (часть 1/2) <span class="arrow"></span></summary>
           <div class="detailsBody">
@@ -451,7 +383,7 @@
                 <li><b>Клиент (Заказчик)</b> — физическое лицо, оплатившее услуги/материалы.</li>
                 <li><b>Услуги</b> — консультации и/или личное сопровождение, оказываемые дистанционно.</li>
                 <li><b>Материалы</b> — цифровые обучающие материалы (видео/текст), передаваемые в электронном виде.</li>
-                <li><b>Акцепт</b> — совершение оплаты по платёжной ссылке (эквайер: Тинькофф) после ознакомления с условиями.</li>
+                <li><b>Акцепт</b> — совершение оплаты по платёжной ссылке через платёжный сервис <b>Robokassa</b> после ознакомления с условиями.</li>
               </ul>
             </div>
 
@@ -468,7 +400,7 @@
             <div>
               <ul>
                 <li>Оферта считается принятой (акцептованной) Клиентом с момента оплаты по платёжной ссылке.</li>
-                <li>До оплаты Клиент обязан ознакомиться с описанием, ценой, сроками и условиями возврата/отмены.</li>
+                <li>Оплата производится через платёжный сервис <b>Robokassa</b> после ознакомления с описанием, ценой, сроками и условиями возврата/отмены.</li>
                 <li>С момента акцепта договор считается заключённым на условиях оферты.</li>
               </ul>
             </div>
@@ -478,7 +410,7 @@
               <ul>
                 <li>Актуальные цены указаны на сайте:
                   <b>Обучающие материалы — 5 000 ₽</b>, <b>Личное сопровождение — 50 000 ₽</b> (если иное не согласовано отдельно).</li>
-                <li>Оплата производится по платёжной ссылке (эквайер: Тинькофф) доступными способами, указанными на странице “Оплата”.</li>
+                <li>Оплата производится по платёжной ссылке через платёжный сервис <b>Robokassa</b> доступными способами, отображаемыми на платёжной странице.</li>
                 <li>Обязательство Исполнителя по предоставлению услуги возникает после подтверждения оплаты платёжным сервисом.</li>
               </ul>
             </div>
@@ -497,7 +429,8 @@
             </div>
           </div>
         </details>
-        <!-- ✅ ДОБАВЛЕНО: Публичная оферта (часть 2/2) -->
+
+        <!-- ✅ Публичная оферта (часть 2/2) -->
         <details>
           <summary>Публичная оферта (часть 2/2) <span class="arrow"></span></summary>
           <div class="detailsBody">
@@ -513,7 +446,7 @@
                   <a href="mailto:mentorpro33@gmail.com">mentorpro33@gmail.com</a>
                   с указанием ФИО, даты оплаты и суммы.</li>
                 <li>Срок рассмотрения запроса — до <b>10 рабочих дней</b>
-                  (или в сроки, установленные банком-эквайером).</li>
+                  (или в сроки, установленные платёжным сервисом/банком-эмитентом).</li>
                 <li>Возврат осуществляется тем же платёжным способом, которым была произведена оплата.</li>
               </ul>
             </div>
@@ -557,7 +490,7 @@
                   исключительно в целях оказания услуг и связи.</li>
                 <li>Персональные данные не передаются третьим лицам,
                   за исключением случаев, предусмотренных законом.</li>
-                <li>Платёжные данные обрабатываются банком-эквайером,
+                <li>Платёжные данные обрабатываются платёжным сервисом/банком,
                   Исполнитель не хранит реквизиты карт.</li>
               </ul>
             </div>
@@ -610,7 +543,7 @@
           <summary>Информационная безопасность <span class="arrow"></span></summary>
           <div class="detailsBody">
             <div><b>Политика данных:</b> данные используются только для оказания услуг и связи.</div>
-            <div><b>Платежи:</b> ввод данных осуществляется только на защищённой странице банка.</div>
+            <div><b>Платежи:</b> ввод данных осуществляется только на защищённой странице платёжного сервиса.</div>
             <div><b>Рекомендация:</b> не передавать данные карты и CVV/CVC в переписке.</div>
           </div>
         </details>
@@ -642,6 +575,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
